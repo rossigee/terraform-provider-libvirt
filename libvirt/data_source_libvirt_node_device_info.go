@@ -488,7 +488,7 @@ func resourceLibvirtNodeDeviceInfoRead(d *schema.ResourceData, meta interface{})
 
 	err = xml.Unmarshal([]byte(xmlDesc), &deviceXML)
 	if err != nil {
-		log.Fatalf("failed to unmarshal XML into deviceXML: %v", err)
+		return fmt.Errorf("failed to unmarshal XML into deviceXML: %w", err)
 	}
 	log.Printf("[DEBUG] Parsed device generic into deviceXML: %#v", deviceXML)
 
@@ -498,7 +498,7 @@ func resourceLibvirtNodeDeviceInfoRead(d *schema.ResourceData, meta interface{})
 		deviceXML := DeviceSystem{}
 		err = xml.Unmarshal([]byte(xmlDesc), &deviceXML)
 		if err != nil {
-			log.Fatalf("failed to unmarshal device system XML into deviceXML: %v", err)
+			return fmt.Errorf("failed to unmarshal device system XML into deviceXML: %v", err)
 		}
 		log.Printf("[DEBUG] Parsed device system into deviceXML: %v", deviceXML)
 
@@ -528,7 +528,7 @@ func resourceLibvirtNodeDeviceInfoRead(d *schema.ResourceData, meta interface{})
 		deviceXML := DevicePCI{}
 		err = xml.Unmarshal([]byte(xmlDesc), &deviceXML)
 		if err != nil {
-			log.Fatalf("failed to unmarshal device pci XML into deviceXML: %v", err)
+			return fmt.Errorf("failed to unmarshal device pci XML into deviceXML: %v", err)
 		}
 		log.Printf("[DEBUG] Parsed device pci into deviceXML: %v", deviceXML)
 
@@ -575,7 +575,7 @@ func resourceLibvirtNodeDeviceInfoRead(d *schema.ResourceData, meta interface{})
 		deviceXML := DeviceUSBDevice{}
 		err = xml.Unmarshal([]byte(xmlDesc), &deviceXML)
 		if err != nil {
-			log.Fatalf("failed to unmarshal device usb_device XML into deviceXML: %v", err)
+			return fmt.Errorf("failed to unmarshal device usb_device XML into deviceXML: %v", err)
 		}
 		log.Printf("[DEBUG] Parsed device usb_device into deviceXML: %v", deviceXML)
 
@@ -600,7 +600,7 @@ func resourceLibvirtNodeDeviceInfoRead(d *schema.ResourceData, meta interface{})
 		deviceXML := DeviceUSB{}
 		err = xml.Unmarshal([]byte(xmlDesc), &deviceXML)
 		if err != nil {
-			log.Fatalf("failed to unmarshal device usb XML into deviceXML: %v", err)
+			return fmt.Errorf("failed to unmarshal device usb XML into deviceXML: %v", err)
 		}
 		log.Printf("[DEBUG] Parsed device usb into deviceXML: %v", deviceXML)
 
@@ -620,7 +620,7 @@ func resourceLibvirtNodeDeviceInfoRead(d *schema.ResourceData, meta interface{})
 		deviceXML := DeviceStorage{}
 		err = xml.Unmarshal([]byte(xmlDesc), &deviceXML)
 		if err != nil {
-			log.Fatalf("failed to unmarshal device storage XML into deviceXML: %v", err)
+			return fmt.Errorf("failed to unmarshal device storage XML into deviceXML: %v", err)
 		}
 		log.Printf("[DEBUG] Parsed device storage into deviceXML: %v", deviceXML)
 
@@ -643,7 +643,7 @@ func resourceLibvirtNodeDeviceInfoRead(d *schema.ResourceData, meta interface{})
 		deviceXML := DeviceNet{}
 		err = xml.Unmarshal([]byte(xmlDesc), &deviceXML)
 		if err != nil {
-			log.Fatalf("failed to unmarshal device net XML into deviceXML: %v", err)
+			return fmt.Errorf("failed to unmarshal device net XML into deviceXML: %v", err)
 		}
 		log.Printf("[DEBUG] Parsed device net into deviceXML: %v", deviceXML)
 
@@ -669,7 +669,7 @@ func resourceLibvirtNodeDeviceInfoRead(d *schema.ResourceData, meta interface{})
 		deviceXML := DeviceSCSI{}
 		err = xml.Unmarshal([]byte(xmlDesc), &deviceXML)
 		if err != nil {
-			log.Fatalf("failed to unmarshal device scsi XML into deviceXML: %v", err)
+			return fmt.Errorf("failed to unmarshal device scsi XML into deviceXML: %v", err)
 		}
 		log.Printf("[DEBUG] Parsed device scsi into deviceXML: %v", deviceXML)
 
@@ -690,7 +690,7 @@ func resourceLibvirtNodeDeviceInfoRead(d *schema.ResourceData, meta interface{})
 		deviceXML := DeviceSCSIHost{}
 		err = xml.Unmarshal([]byte(xmlDesc), &deviceXML)
 		if err != nil {
-			log.Fatalf("failed to unmarshal device scsi_host XML into deviceXML: %v", err)
+			return fmt.Errorf("failed to unmarshal device scsi_host XML into deviceXML: %v", err)
 		}
 		log.Printf("[DEBUG] Parsed device scsi_host into deviceXML: %v", deviceXML)
 
@@ -708,7 +708,7 @@ func resourceLibvirtNodeDeviceInfoRead(d *schema.ResourceData, meta interface{})
 		deviceXML := DeviceDRM{}
 		err = xml.Unmarshal([]byte(xmlDesc), &deviceXML)
 		if err != nil {
-			log.Fatalf("failed to unmarshal device drm XML into deviceXML: %v", err)
+			return fmt.Errorf("failed to unmarshal device drm XML into deviceXML: %v", err)
 		}
 		log.Printf("[DEBUG] Parsed device drm into deviceXML: %v", deviceXML)
 
