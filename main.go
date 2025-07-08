@@ -10,11 +10,11 @@ import (
 func main() {
 	// Configure logging to prevent interference with Terraform's JSON output
 	libvirt.ConfigureLogging()
-	
+
 	var debugMode bool
 	flag.BoolVar(&debugMode, "debug", false, "set to true to run the provider with support for debuggers like delve")
 	flag.Parse()
-	
+
 	defer libvirt.CleanupLibvirtConnections()
 
 	opts := &plugin.ServeOpts{

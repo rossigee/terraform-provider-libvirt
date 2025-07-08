@@ -34,7 +34,7 @@ func LogDebug(ctx context.Context, msg string, additionalFields ...map[string]in
 		}
 		return
 	}
-	
+
 	tflog.Debug(ctx, msg, additionalFields...)
 }
 
@@ -47,7 +47,7 @@ func LogInfo(ctx context.Context, msg string, additionalFields ...map[string]int
 		}
 		return
 	}
-	
+
 	tflog.Info(ctx, msg, additionalFields...)
 }
 
@@ -60,7 +60,7 @@ func LogWarn(ctx context.Context, msg string, additionalFields ...map[string]int
 		}
 		return
 	}
-	
+
 	tflog.Warn(ctx, msg, additionalFields...)
 }
 
@@ -73,6 +73,6 @@ func LogError(ctx context.Context, msg string, additionalFields ...map[string]in
 		}
 		return
 	}
-	
+
 	tflog.Error(ctx, msg, additionalFields...)
 }
